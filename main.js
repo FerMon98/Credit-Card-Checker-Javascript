@@ -27,19 +27,24 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 const validateCred = arr => {
     let doubledArray = [];
 
+    for (i = arr.length-1; i >= 0 ; i++) {
+        doubledArray.push(arr[i]);
+    }
+
+    let getEveryTwoPosition = doubledArray.filter((_, i) => i% 2 === 0);
+    let multiplyPosition = getEveryTwoPosition.map(num => num * 2);
+    let sumDigits = arr => {
+        for (i = 0; i < arr.length; i++){
+            if (arr[i] > 10) {
+                return (arr[i] % 10) + sumDigits(Math.floor(arr[i] / 10));
+            } 
+            return arr[i];
+        }
+    }
+
+    console.log(sumDigits(multiplyPosition));
     
-   
 }
-
-
-
-
-
-
-
-
-
-
 
 
 const findInvalidCards = arr => {
