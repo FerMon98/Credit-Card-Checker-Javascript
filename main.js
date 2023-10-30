@@ -27,7 +27,7 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 const validateCred = arr => {
     let doubledArray = [];
 
-    for (i = arr.length-1; i >= 0 ; i++) {
+    for (i = arr.length-1; i < 0 ; i++) {
         doubledArray.push(arr[i]);
     }
 
